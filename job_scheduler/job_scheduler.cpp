@@ -1,8 +1,5 @@
-#include <cmath>
-#include <cstdio>
 #include <vector>
 #include <iostream>
-#include <algorithm>
 #include <queue>
 #define ll long long
 using namespace std;
@@ -49,13 +46,13 @@ vector<Job *> jobs;
 int main()
 {
     // freopen("input.txt","r",stdin);
-    ios_base::sync_with_stdio(0); // for fast input
+    // ios_base::sync_with_stdio(0); // for fast input
     ll limit;
     string s;
     cin >> s >> limit; // input number of CPUs
     ll fre = limit;    // variable to store number of free CPUs at anymoment
     string ch,query;
-    ll tim, k, assigned, fin; // declaration of some more variables
+    ll tim, k, assigned_n, fin; // declaration of some more variables
     while (cin >> ch)
     { // input lines one by one
         if (ch == "job")
@@ -78,9 +75,9 @@ int main()
                 else
                     break; // break when all jobs are removed
             }
-            assigned = min(min(k, fre), (ll)q.size()); // number of jobs to be assigned
-            fre -= assigned;                           // decrease the number of free CPUs
-            while (assigned--)
+            assigned_n = min(min(k, fre), (ll)q.size()); // number of jobs to be assigned
+            fre -= assigned_n;                           // decrease the number of free CPUs
+            while (assigned_n--)
             {
                 Job *temp = q.top();  // assign jobs one by one according to priority
                 cout << temp << "\n"; // display them
