@@ -71,3 +71,23 @@ Constraints
 - (importance)- Unsigned integer in the range 1-100 inclusive
 - (duration)- an integer in range [0, 2^31 - 1]
 
+### Input Format
+
+cpus 100
+
+job timestamp1 id1 orig instr importance duration
+
+job timestamp2 id2 orig instr importance duration
+
+assign timestamp k
+
+query timestamp k
+
+job timestamp3 id3 orig instr importance duration
+
+query timestamp orig
+
+
+### Output Format
+
+job timestamp1 id1 orig instr importance duration
